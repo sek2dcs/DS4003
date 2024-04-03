@@ -7,7 +7,7 @@ import numpy as np
 import dash_bootstrap_components as dbc
 
 # reading in data 
-data = pd.read_csv("/Users/sophiekim/Desktop/4th year (spring)/DS 4003/project/data.csv")
+data = pd.read_csv("https://github.com/sek2dcs/DS4003/blob/main/data.csv")
 
 # initializing app  -- using minty boostrap theme 
 app = Dash(__name__, external_stylesheets = [dbc.themes.MINTY])
