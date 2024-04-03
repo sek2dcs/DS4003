@@ -5,9 +5,16 @@ import plotly.express as px
 import pandas as pd 
 import numpy as np
 import dash_bootstrap_components as dbc
+import requests
 
+# using requests library to get csv file -- for debuggin efforts in render 
+url = "https://github.com/sek2dcs/DS4003/blob/main/data.csv"
+response = requests.get(url)
+with open("data_fixed.csv", "wb") as f:
+    f.write(response.content)
+    
 # reading in data 
-data = pd.read_csv("https://github.com/sek2dcs/DS4003/blob/main/data.csv")
+data = pd.read_csv("data.csv")
 data = data.reset_index() # debugging efforts for render
 
 # initializing app  -- using minty boostrap theme 
