@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import dash_bootstrap_components as dbc
 import requests
+import io 
 
 # importing the load figure template so that the graphs are in minty colors
 from dash_bootstrap_templates import load_figure_template
