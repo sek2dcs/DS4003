@@ -19,11 +19,10 @@ from dash_iconify import DashIconify
 # using the requests library to access the data
 url = "https://github.com/sek2dcs/DS4003/blob/main/data.csv"
 response = requests.get(url)
-with open("data.csv", "wb") as f:
-    f.write(response.content)
+data = pd.read_csv(io.BytesIO(response.content))
 
 # reading the data in & resetting index just for debugging efforts
-data = pd.read_csv("data.csv", on_bad_lines='skip')
+# data = pd.read_csv("data.csv", on_bad_lines='skip')
 
 # styling the app
 dbc_css= "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
