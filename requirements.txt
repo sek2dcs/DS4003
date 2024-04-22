@@ -5,4 +5,5 @@ scikit_learn
 plotly
 gunicorn
 dash_bootstrap_components
-requests
+dash_iconify 
+dash_mantine_components
