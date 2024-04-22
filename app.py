@@ -22,7 +22,7 @@ url = "https://github.com/sek2dcs/DS4003/blob/main/data.csv"
 response = requests.get(url)
 with open("data.csv", "wb") as f:
     f.write(response.content)
-# data = pd.read_csv(io.BytesIO(response.content), delimiter = ',')
+# data = pd.read_csv(io.BytesIO(response.content), delimiter = ',', error_bad_lines = False)
 data = pd.read_csv("data.csv", delimiter = ',')
 data = data.reset_index()
 
