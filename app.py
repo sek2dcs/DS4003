@@ -20,7 +20,10 @@ from dash_iconify import DashIconify
 # using the requests library to access the data
 url = "https://github.com/sek2dcs/DS4003/blob/main/data.csv"
 response = requests.get(url)
-data = pd.read_csv(io.BytesIO(response.content), delimiter = ',')
+with open("data.csv", "wb") as f:
+    f.write(response.content)
+# data = pd.read_csv(io.BytesIO(response.content), delimiter = ',')
+data = pd.read_csv("data.csv", delimiter = ',')
 
 # reading the data in & resetting index just for debugging efforts
 # data = pd.read_csv("data.csv", on_bad_lines='skip')
