@@ -24,7 +24,6 @@ with open("data.csv", "wb") as f:
 
 # reading the data in & resetting index just for debugging efforts
 data = pd.read_csv("data.csv", on_bad_lines='skip')
-data = data.reset_index()
 
 # styling the app
 dbc_css= "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
