@@ -23,7 +23,7 @@ with open("data.csv", "wb") as f:
     f.write(response.content)
 
 # reading the data in & resetting index just for debugging efforts
-data = pd.read_csv("data.csv")
+data = pd.read_csv("data.csv", on_bad_lines='skip')
 data = data.reset_index()
 
 # styling the app
