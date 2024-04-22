@@ -14,11 +14,16 @@ load_figure_template(["minty"])
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-# reading in data
-data = pd.read_csv("/Users/sophiekim/Desktop/4th year (spring)/DS 4003/project/data.csv")
 
-# looking at it 
-data.head()
+# using the requests library to access the data
+url = "https://github.com/sek2dcs/DS4003/blob/main/data.csv"
+response = requests.get(url)
+with open("data.csv", "wb") as f:
+    f.write(response.content)
+
+# reading the data in & resetting index just for debugging efforts
+data = pd.read_csv("data.csv")
+data = data.reset_index()
 
 # styling the app
 dbc_css= "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
