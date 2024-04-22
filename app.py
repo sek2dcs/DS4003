@@ -24,6 +24,7 @@ with open("data.csv", "wb") as f:
     f.write(response.content)
 # data = pd.read_csv(io.BytesIO(response.content), delimiter = ',')
 data = pd.read_csv("data.csv", delimiter = ',')
+data = data.reset_index()
 
 # reading the data in & resetting index just for debugging efforts
 # data = pd.read_csv("data.csv", on_bad_lines='skip')
