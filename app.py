@@ -18,7 +18,7 @@ from dash_iconify import DashIconify
 
 
 # using the requests library to access the data
-url = "https://github.com/sek2dcs/DS4003/blob/main/data.csv"
+url = "https://raw.githubusercontent.com/sek2dcs/DS4003/main/data.csv"
 response = requests.get(url)
 with open("data.csv", "wb") as f:
     f.write(response.content)
